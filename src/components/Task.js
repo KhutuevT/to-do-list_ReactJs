@@ -8,7 +8,7 @@ const Task = ({getAllTasks, title, text, id, isCheck}) => {
 
   const deleteTask = async () => {
     await axios
-      .delete(deleteTasksUrl, { params: { id: id } })
+      .delete(deleteTasksUrl, { params: { id } })
       .then((res) => {
         getAllTasks()
       });

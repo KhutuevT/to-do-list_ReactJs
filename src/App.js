@@ -18,11 +18,11 @@ const App = () => {
   }, []);
 
   //TODO переделать это временное решение
-  useEffect(async()=>{
+  useEffect(async () => {
     await axios.get(getAllTasksUrl).then((res) => {
       setTasks(res.data.data);
     });
-  }, [])
+  }, []);
 
   return (
     <div className="App">
@@ -30,11 +30,11 @@ const App = () => {
         <p>Todo List</p>
       </header>
       <div className="main-div">
-        <CreateTask getAllTasks={getAllTasks}/>
-        <TasksContainer tasks={tasks} getAllTasks={getAllTasks}/>
+        <CreateTask getAllTasks={getAllTasks} />
+        <TasksContainer tasks={tasks} getAllTasks={getAllTasks} />
       </div>
     </div>
   );
-}
+};
 
 export default App;

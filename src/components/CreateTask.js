@@ -9,8 +9,6 @@ const CreateTask = ({ getAllTasks }) => {
 
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
-  const [color, setColor] = useState("");
-  const [displayColorPicker, setdisplayColorPicker] = useState("");
 
   const addNewTask = async () => {
     await axios
@@ -25,7 +23,6 @@ const CreateTask = ({ getAllTasks }) => {
         setText("");
       });
   };
-
 
   return (
     <div className="ctreate-task">
