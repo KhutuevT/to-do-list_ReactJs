@@ -39,18 +39,6 @@ const CreateTask = ({ getAllTasks }) => {
     setColor(color.hex);
   };
 
-  const popover = {
-    position: 'absolute',
-    zIndex: '2',
-  };
-  const cover = {
-    position: 'fixed',
-    top: '0px',
-    right: '0px',
-    bottom: '0px',
-    left: '0px',
-  };
-
   return (
     <div className="ctreate-task">
       <input
@@ -70,17 +58,11 @@ const CreateTask = ({ getAllTasks }) => {
 
       <button onClick={handleClick}>Pick Color</button>
 
-      {displayColorPicker ? (
-        //TODO потом понять как его передвинуть нормально
-        <div style={popover}>
- 
-            className="color-piker-div"
-            style={cover}
-            onClick={handleClose}
+        { displayColorPicker ? <div className="popover" >
+          <div className="cover"  onClick={ handleClose }/>
+          <TwitterPicker onChangeComplete={ handleChangeComplete }/>
+        </div> : null }
 
-          <TwitterPicker onChangeComplete={handleChangeComplete} />
-        </div>
-      ) : null}
     </div>
   );
 };
