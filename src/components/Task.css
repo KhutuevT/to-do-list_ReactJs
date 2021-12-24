@@ -1,0 +1,11 @@
+.task-card{
+    border: solid 1px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 1px #0000006e;
+    max-width: 300px;
+}
+
+h3{
+    margin: 0px;
+}
