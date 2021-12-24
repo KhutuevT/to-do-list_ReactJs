@@ -31,13 +31,13 @@ const CreateTask = ({ getAllTasks }) => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         id="title-input"
-      ></input>
+      />
       <input
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         id="text-input"
-      ></input>
+      />
 
       <button onClick={() => addNewTask()}>Add</button>
 
