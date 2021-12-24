@@ -3,27 +3,16 @@ import axios from "axios";
 import Task from "./Task";
 import "./TasksContainer.css";
 
-function TasksContainer(props) {
-  const PORT = 8000;
-  const getAllTasksUrl = `http://localhost:${PORT}/allTasks`;
-
-  // const [tasks, setTasks] = useState([]);
-
-  // useEffect(async () => {
-  //   await axios.get(getAllTasksUrl).then((res) => {
-  //     setTasks(res.data.data);
-  //   });
-  // }, [props.taskCount]);
-
+const TasksContainer = ({tasks, getAllTasks}) => {
   return (
     <div className="tasks-container">
-      {props.tasks.map((task, index) => (
-        <Task
+      {tasks.map((task, index) => (
+        <Task key={`task-${index}`}
           title={task.title}
           text={task.text}
           id={task._id}
           color={task.color}
-          getAllTasks={props.getAllTasks}
+          getAllTasks={getAllTasks}
         />
       ))}
     </div>

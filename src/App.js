@@ -5,7 +5,7 @@ import CreateTask from "./components/CreateTask";
 import TasksContainer from "./components/TasksContainer";
 import React from "react";
 
-function App() {
+const App = () => {
   const PORT = 8000;
   const getAllTasksUrl = `http://localhost:${PORT}/allTasks`;
 
@@ -17,7 +17,12 @@ function App() {
     });
   }, []);
 
-  getAllTasks()
+  //TODO переделать это временное решение
+  useEffect(async()=>{
+    await axios.get(getAllTasksUrl).then((res) => {
+      setTasks(res.data.data);
+    });
+  }, [])
 
   return (
     <div className="App">
