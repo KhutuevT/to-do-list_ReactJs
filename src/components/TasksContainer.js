@@ -11,7 +11,7 @@ const TasksContainer = ({tasks, getAllTasks}) => {
           title={task.title}
           text={task.text}
           id={task._id}
-          color={task.color}
+          isCheck = {task.isCheck}
           getAllTasks={getAllTasks}
         />
       ))}

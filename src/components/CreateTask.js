@@ -17,7 +17,6 @@ const CreateTask = ({ getAllTasks }) => {
       .post(postCreateTaskUrl, {
         title,
         text,
-        color,
         isCheck: false,
       })
       .then((res) => {
@@ -27,17 +26,6 @@ const CreateTask = ({ getAllTasks }) => {
       });
   };
 
-  const handleClick = () => {
-    setdisplayColorPicker(!displayColorPicker);
-  };
-
-  const handleClose = () => {
-    setdisplayColorPicker(false);
-  };
-
-  const handleChangeComplete = (color) => {
-    setColor(color.hex);
-  };
 
   return (
     <div className="ctreate-task">
@@ -55,13 +43,6 @@ const CreateTask = ({ getAllTasks }) => {
       ></input>
 
       <button onClick={() => addNewTask()}>Add</button>
-
-      <button onClick={handleClick}>Pick Color</button>
-
-        { displayColorPicker ? <div className="popover" >
-          <div className="cover"  onClick={ handleClose }/>
-          <TwitterPicker onChangeComplete={ handleChangeComplete }/>
-        </div> : null }
 
     </div>
   );
