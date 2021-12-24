@@ -38,9 +38,7 @@ const CreateTask = ({ getAllTasks }) => {
         onChange={(e) => setText(e.target.value)}
         id="text-input"
       />
-
       <button onClick={() => addNewTask()}>Add</button>
-
     </div>
   );
 };
