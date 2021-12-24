@@ -11,7 +11,7 @@ const App = () => {
 
   const [tasks, setTasks] = useState([]);
 
-  let getAllTasks = React.useCallback(async () => {
+  const getAllTasks = React.useCallback(async () => {
     await axios.get(getAllTasksUrl).then((res) => {
       setTasks(res.data.data);
     });
