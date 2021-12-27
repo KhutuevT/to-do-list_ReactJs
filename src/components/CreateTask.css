@@ -1,0 +1,22 @@
+.create-task{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    max-width: 400px;
+    min-width: 270px;
+}
+
+.create-task textarea {
+    margin-bottom: 10px;
+    height: 70px;
+    resize: none; 
+}
+
+.create-task p{
+    margin: 0px;
+    margin-top: 10px;
+}
+
+

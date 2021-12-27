@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  max-height: 100%;
 }
 
 .App-logo {
@@ -35,4 +36,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+ .App{
+  max-height: 100%;
+ }
+
+.cover{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #00000074;
+}
+
+.main-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100%;
 }
