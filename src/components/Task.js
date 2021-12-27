@@ -44,7 +44,7 @@ const Task = ({
           checked={isCheck}
           type="checkbox"
           className={`checkbox-${id}`}
-          onClick={() => onCheck()}
+          onChange={() => onCheck()}
         />
         <div className="title-div">
           <h3>{`${title}`}</h3>
