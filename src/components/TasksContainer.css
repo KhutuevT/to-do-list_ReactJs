@@ -2,7 +2,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 70%;
+    width: 80%;
+    max-height: 83vh;
+    overflow: auto;
 }
 
 @media screen and (max-width: 545px) {

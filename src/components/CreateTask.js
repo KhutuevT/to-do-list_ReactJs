@@ -30,13 +30,15 @@ const CreateTask = ({getAllTasks}) => {
 
   return (
     <div className="create-task">
+      <p>Title</p>
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         id="title-input"
       />
-      <input
+      <p>Text</p>
+      <textarea
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}

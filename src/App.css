@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  max-height: 100%;
 }
 
 .App-logo {
@@ -37,6 +38,10 @@
   }
 }
 
+ .App{
+  max-height: 100%;
+ }
+
 .cover{
   position: fixed;
   top: 0px;
@@ -50,4 +55,5 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 100%;
 }
