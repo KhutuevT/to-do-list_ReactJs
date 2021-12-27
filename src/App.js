@@ -5,14 +5,15 @@ import TasksContainer from './components/TasksContainer';
 import EditModalWindow from './components/EditModalWindow';
 import './App.css';
 
+const URL = process.env.REACT_APP_LOCAL_URL;
+
 const App = () => {
   const [editOpen, seteditOpen] = useState(false);
   const [oldTitle, setOldTitle] = useState('');
   const [oldText, setOldText] = useState('');
   const [tasks, setTasks] = useState([]);
 
-  const PORT = 8000;
-  const getAllTasksUrl = `http://localhost:${PORT}/allTasks`;
+  const getAllTasksUrl = `${URL}/allTasks`;
 
   const getAllTasks = React.useCallback(async () => {
     await axios.get(getAllTasksUrl).then((res) => {

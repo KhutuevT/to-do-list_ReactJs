@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import './CreateTask.css';
 
+const URL = process.env.REACT_APP_LOCAL_URL;
+
 // eslint-disable-next-line react/prop-types
 const CreateTask = ({getAllTasks}) => {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
 
-  const PORT = 8000;
-  const postCreateTaskUrl = `http://localhost:${PORT}/createTask`;
+  const postCreateTaskUrl = `${URL}/createTask`;
 
   const addNewTask = async () => {
     if (title.trim().length !== 0 && text.trim().length !== 0) {
