@@ -1,5 +1,7 @@
-import Task from "./Task";
-import "./TasksContainer.css";
+/* eslint-disable react/prop-types */
+import React from 'react';
+import Task from './Task';
+import './TasksContainer.css';
 
 const TasksContainer = ({
   tasks,

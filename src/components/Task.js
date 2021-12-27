@@ -1,5 +1,7 @@
-import axios from "axios";
-import "./Task.css";
+/* eslint-disable react/prop-types */
+import React from 'react';
+import axios from 'axios';
+import './Task.css';
 
 const Task = ({
   getAllTasks,
@@ -16,7 +18,7 @@ const Task = ({
   const patchUpdateTask = `http://localhost:${PORT}/updateTask`;
 
   const deleteTask = async () => {
-    await axios.delete(deleteTasksUrl, { params: { id } }).then((res) => {
+    await axios.delete(deleteTasksUrl, {params: {id}}).then((res) => {
       getAllTasks();
     });
   };
@@ -29,10 +31,10 @@ const Task = ({
 
   const onCheck = async () => {
     await axios
-      .patch(patchUpdateTask, { id, isCheck: !isCheck })
-      .then((res) => {
-        getAllTasks();
-      });
+        .patch(patchUpdateTask, {id, isCheck: !isCheck})
+        .then((res) => {
+          getAllTasks();
+        });
   };
 
   return (

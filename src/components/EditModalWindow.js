@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import axios from "axios";
-import "./EditModalWindow.css";
+/* eslint-disable react/prop-types */
+import React, {useState} from 'react';
+import axios from 'axios';
+import './EditModalWindow.css';
 
 
 const EditModalWindow = ({
@@ -10,27 +11,26 @@ const EditModalWindow = ({
   oldTitle,
   oldText,
 }) => {
-  const PORT = 8000;
-  const patchUpdateTaskUrl = `http://localhost:${PORT}/updateTask`;
-  console.log(oldTitle, oldText);
-
   const [title, setTitle] = useState(oldTitle);
   const [text, setText] = useState(oldText);
+
+  const PORT = 8000;
+  const patchUpdateTaskUrl = `http://localhost:${PORT}/updateTask`;
 
   const editTask = async () => {
     if (title.trim().length !== 0 && text.trim().length !== 0) {
       await axios
-        .patch(patchUpdateTaskUrl, {
-          id,
-          title,
-          text,
-        })
-        .then(() => {
-          getAllTasks();
-          editModalWindowChange(false);
-        });
+          .patch(patchUpdateTaskUrl, {
+            id,
+            title,
+            text,
+          })
+          .then(() => {
+            getAllTasks();
+            editModalWindowChange(false);
+          });
     } else {
-      alert("Введите данные!");
+      alert('Введите данные!');
     }
   };
 

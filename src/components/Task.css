@@ -1,52 +1,51 @@
-.task-is-true{
-    border: solid 1px;
-    margin: 10px;
-    padding: 10px;
-    box-shadow: 5px 5px 1px #0000006e;
-    max-width: 300px;
-    width: 30%;
+.task-is-true {
+  border: solid 1px;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 1px #0000006e;
+  max-width: 300px;
+  width: 30%;
 }
 
-.task-card{
-    word-wrap: break-word;
+.task-card {
+  word-wrap: break-word;
 }
 
-.title-div{
-    word-wrap: break-word;
-    width: 90%;
-    display: flex;
+.title-div {
+  word-wrap: break-word;
+  width: 90%;
+  display: flex;
 }
 
-.card-buttons{
-    display: flex;
-    justify-content: space-between
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
-h3{
-    margin: 0px;
-    margin-left: 10px;
+h3 {
+  margin: 0px;
+  margin-left: 10px;
 }
 
-.task-is-false{
-    border: solid gray 1px;
-    margin: 10px;
-    padding: 10px;
-    background-color: gray;
-    max-width: 300px;
-    width: 30%;
+.task-is-false {
+  border: solid gray 1px;
+  margin: 10px;
+  padding: 10px;
+  background-color: gray;
+  max-width: 300px;
+  width: 30%;
 }
 
-.task-header{
-    display: flex;
+.task-header {
+  display: flex;
 }
 
 @media screen and (max-width: 545px) {
-    .task-is-true{
-        width: 100%;
-    }
+  .task-is-true {
+    width: 100%;
+  }
 
-    .task-is-false{
-        width: 100%;
-    }
+  .task-is-false {
+    width: 100%;
+  }
 }
-
