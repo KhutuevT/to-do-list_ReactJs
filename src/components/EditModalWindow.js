@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import './EditModalWindow.css';
 
-
 const EditModalWindow = ({
   id,
   getAllTasks,

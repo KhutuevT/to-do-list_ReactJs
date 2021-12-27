@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import './CreateTask.css';
 
-
 // eslint-disable-next-line react/prop-types
 const CreateTask = ({getAllTasks}) => {
   const [title, setTitle] = useState('');

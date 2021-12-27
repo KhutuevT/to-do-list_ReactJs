@@ -20,22 +20,14 @@ const App = () => {
     });
   }, []);
 
-  const oldTitleChange = (title) => {
-    setOldTitle(title);
-  };
-  const oldTextChange = (text) => {
-    setOldText(text);
-  };
+  const oldTitleChange = (title) => setOldTitle(title);
 
-  const editModalWindowChange = (isOpen) => {
-    seteditOpen(isOpen);
-  };
+  const oldTextChange = (text) => setOldText(text);
 
-  const editModelWindowClose = () => {
-    seteditOpen(false);
-  };
+  const editModalWindowChange = (isOpen) => seteditOpen(isOpen);
 
-  //  TODO переделать это временное решение
+  const editModelWindowClose = () => seteditOpen(false);
+
   useEffect(async () => {
     getAllTasks();
   }, []);
