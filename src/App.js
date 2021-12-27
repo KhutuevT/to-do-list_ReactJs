@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
 import CreateTask from "./components/CreateTask";
 import TasksContainer from "./components/TasksContainer";
 import EditModalWindow from "./components/EditModalWindow";
-import React from "react";
+import "./App.css";
 
 const App = () => {
   const PORT = 8000;
@@ -46,8 +45,6 @@ const App = () => {
       setTasks(res.data.data);
     });
   }, []);
-
-  //TODO понять как правильно передать в модальное окно данные (через гет элемент или как то в editOpen)
 
   return (
     <div className="App">

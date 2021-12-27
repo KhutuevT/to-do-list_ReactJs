@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { TwitterPicker } from "react-color";
+import React, { useState } from "react";
 import axios from "axios";
 import "./CreateTask.css";
 

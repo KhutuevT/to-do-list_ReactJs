@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 import Task from "./Task";
 import "./TasksContainer.css";
 
