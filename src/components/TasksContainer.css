@@ -2,4 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 70%;
+}
+
+@media screen and (max-width: 545px) {
+    .tasks-container{
+        width: 100%;
+    }
 }

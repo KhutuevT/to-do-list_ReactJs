@@ -11,21 +11,25 @@ const CreateTask = ({ getAllTasks }) => {
   const [text, setText] = useState("");
 
   const addNewTask = async () => {
-    await axios
-      .post(postCreateTaskUrl, {
-        title,
-        text,
-        isCheck: false,
-      })
-      .then((res) => {
-        getAllTasks();
-        setTitle("");
-        setText("");
-      });
+    if (title.trim().length !== 0 && text.trim().length !== 0) {
+      await axios
+        .post(postCreateTaskUrl, {
+          title,
+          text,
+          isCheck: false,
+        })
+        .then((res) => {
+          getAllTasks();
+          setTitle("");
+          setText("");
+        });
+    } else {
+      alert("Введите данные!");
+    }
   };
 
   return (
-    <div className="ctreate-task">
+    <div className="create-task">
       <input
         type="text"
         value={title}

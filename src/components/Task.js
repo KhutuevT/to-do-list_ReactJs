@@ -1,27 +1,63 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import './Task.css'
+import "./Task.css";
 
-const Task = ({getAllTasks, title, text, id, isCheck}) => {
+const Task = ({
+  getAllTasks,
+  title,
+  text,
+  id,
+  isCheck,
+  editModalWindowChange,
+  oldTitleChange,
+  oldTextChange,
+}) => {
   const PORT = 8000;
   const deleteTasksUrl = `http://localhost:${PORT}/deleteTask`;
+  const patchUpdateTask = `http://localhost:${PORT}/updateTask`;
 
   const deleteTask = async () => {
+    await axios.delete(deleteTasksUrl, { params: { id } }).then((res) => {
+      getAllTasks();
+    });
+  };
+
+  const editTask = () => {
+    editModalWindowChange(id);
+    oldTitleChange(title);
+    oldTextChange(text);
+  };
+
+  const onCheck = async () => {
     await axios
-      .delete(deleteTasksUrl, { params: { id } })
+      .patch(patchUpdateTask, { id, isCheck: !isCheck })
       .then((res) => {
-        getAllTasks()
+        getAllTasks();
       });
   };
 
   return (
-    <div className="task-card" key={`task-${id}`}>
-      <h3>{`${title}`}</h3>
+    <div className={`task-card task-is-${!isCheck}`} key={`task-${id}`}>
+      <div className="task-header">
+        <input
+          checked={isCheck}
+          type="checkbox"
+          className={`checkbox-${id}`}
+          onClick={() => onCheck()}
+        />
+        <div className="title-div">
+          <h3>{`${title}`}</h3>
+        </div>
+      </div>
+
       <p>{`${text}`}</p>
-      <button>Edit</button>
-      <button onClick={() => deleteTask()}>Delete</button>
+
+      <div className="card-buttons">
+        {!isCheck ? <button onClick={() => editTask()}>Edit</button> : null}
+        <button onClick={() => deleteTask()}>Delete</button>
+      </div>
     </div>
   );
-}
+};
 
 export default Task;
