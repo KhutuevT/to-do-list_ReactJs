@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import './EditModalWindow.css';
 
+const URL = process.env.REACT_APP_LOCAL_URL;
+
 const EditModalWindow = ({
   id,
   getAllTasks,
@@ -13,8 +15,7 @@ const EditModalWindow = ({
   const [title, setTitle] = useState(oldTitle);
   const [text, setText] = useState(oldText);
 
-  const PORT = 8000;
-  const patchUpdateTaskUrl = `http://localhost:${PORT}/updateTask`;
+  const patchUpdateTaskUrl = `${URL}/updateTask`;
 
   const editTask = async () => {
     if (title.trim().length !== 0 && text.trim().length !== 0) {

@@ -3,6 +3,8 @@ import React from 'react';
 import axios from 'axios';
 import './Task.css';
 
+const URL = process.env.REACT_APP_LOCAL_URL;
+
 const Task = ({
   getAllTasks,
   title,
@@ -13,9 +15,8 @@ const Task = ({
   oldTitleChange,
   oldTextChange,
 }) => {
-  const PORT = 8000;
-  const deleteTasksUrl = `http://localhost:${PORT}/deleteTask`;
-  const patchUpdateTask = `http://localhost:${PORT}/updateTask`;
+  const deleteTasksUrl = `${URL}/deleteTask`;
+  const patchUpdateTask = `${URL}/updateTask`;
 
   const deleteTask = async () => {
     await axios.delete(deleteTasksUrl, {params: {id}}).then((res) => {
