@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { useHistory } from "react-router-dom";
-import API from "../controllers/API";
+import API from "../../controllers/API";
 import "./Task.css";
 
 const Task = ({
