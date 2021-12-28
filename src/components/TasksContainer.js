@@ -10,11 +10,9 @@ const TasksContainer = ({
   oldTitleChange,
   oldTextChange,
 }) => {
-  tasks.sort((a, b) => {
-    if (a.isCheck === true) {
-      return 1;
-    } else return -1;
-  });
+  tasks.sort((a, b) =>
+    a.isCheck > b.isCheck ? 1 : a.isCheck < b.isCheck ? -1 : 0,
+  );
   return (
     <div className="tasks-container">
       {tasks.map((task, index) => (
