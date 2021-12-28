@@ -9,13 +9,13 @@ const CreateTask = ({ getAllTasks }) => {
 
   const addNewTask = async () => {
     if (title.trim().length !== 0 && text.trim().length !== 0) {
-      API.addNewTask(title, text).then((res)=> {
+      API.addNewTask(title, text).then((res) => {
         getAllTasks();
         setTitle("");
         setText("");
-      })
+      });
     } else alert("Форма не должна содержать пустые поля!");
-  }
+  };
 
   return (
     <div className="create-task">
@@ -37,10 +37,11 @@ const CreateTask = ({ getAllTasks }) => {
         id="text-input"
       />
       <div className="create-task-buttons">
-        <button className="add-task-button" onClick={() => addNewTask()}>Add</button>
+        <button className="add-task-button" onClick={() => addNewTask()}>
+          Add
+        </button>
         <button className="color-selection-button">Color</button>
       </div>
-      
     </div>
   );
 };

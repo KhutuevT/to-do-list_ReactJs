@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
-import CreateTask from './CreateTask';
-import TasksContainer from './TasksContainer';
+import React, { useState, useEffect } from "react";
+import CreateTask from "./CreateTask";
+import TasksContainer from "./TasksContainer";
 import API from "../controllers/API";
-import './Home.css';
+import "./Home.css";
 
-const Home = ({setOpeningTaskId, setOldTitle, setOldText}) => {
+const Home = ({ setOpeningTaskId, setOldTitle, setOldText }) => {
   const [tasks, setTasks] = useState([]);
 
   const getAllTasks = React.useCallback(async () => {
@@ -24,7 +24,7 @@ const Home = ({setOpeningTaskId, setOldTitle, setOldText}) => {
       <TasksContainer
         tasks={tasks}
         getAllTasks={getAllTasks}
-        setOpeningTaskId = {setOpeningTaskId}
+        setOpeningTaskId={setOpeningTaskId}
         oldTitleChange={setOldTitle}
         oldTextChange={setOldText}
       />

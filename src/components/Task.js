@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import {useHistory } from "react-router-dom";
-import "./Task.css";
+import { useHistory } from "react-router-dom";
 import API from "../controllers/API";
+import "./Task.css";
 
 const Task = ({
   getAllTasks,
@@ -16,8 +16,7 @@ const Task = ({
 }) => {
   const history = useHistory();
   const deleteTask = async () => {
-    await API.deleteTask(id)
-    .then((res) => {
+    await API.deleteTask(id).then((res) => {
       getAllTasks();
     });
   };
@@ -26,19 +25,17 @@ const Task = ({
     setOpeningTaskId(id);
     oldTitleChange(title);
     oldTextChange(text);
-    history.push(`edit/${id}`)
+    history.push(`edit/${id}`);
   };
 
   const onCheck = async () => {
-    await API.taskIsCheckUpdate(id, !isCheck)
-      .then((res) => {
-        getAllTasks();
-      });
+    await API.taskIsCheckUpdate(id, !isCheck).then((res) => {
+      getAllTasks();
+    });
   };
 
   return (
-    <div 
-      className={`task-card task-is-${!isCheck}`}  key={`task-${id}`}>
+    <div className={`task-card task-is-${!isCheck}`} key={`task-${id}`}>
       <div className="task-header">
         <input
           checked={isCheck}
@@ -51,11 +48,11 @@ const Task = ({
         </div>
 
         {!isCheck ? (
-            <img
-              className="edit-img"
-              onClick={() => editTask()}
-              src="https://img.icons8.com/material-sharp/24/ffffff/edit.png"
-            />
+          <img
+            className="edit-img"
+            onClick={() => editTask()}
+            src="https://img.icons8.com/material-sharp/24/ffffff/edit.png"
+          />
         ) : null}
         <img
           className="delete-img"
@@ -65,7 +62,6 @@ const Task = ({
       </div>
 
       <p>{`${text}`}</p>
-
     </div>
   );
 };

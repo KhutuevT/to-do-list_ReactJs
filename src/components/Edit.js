@@ -29,7 +29,7 @@ const Edit = ({ openingTaskId, oldTitle, oldText }) => {
       (openingTaskId.trim().length !== 0) &
       (title.trim().length !== 0) &
       (text.trim().length !== 0)
-    ){
+    ) {
       API.updateTask(openingTaskId, title, text);
     } else alert("Форма не должна содержать пустые поля!");
   };

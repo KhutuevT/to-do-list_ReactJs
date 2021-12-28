@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
-import Task from './Task';
-import './TasksContainer.css';
+import React from "react";
+import Task from "./Task";
+import "./TasksContainer.css";
 
 const TasksContainer = ({
   tasks,
@@ -11,7 +11,7 @@ const TasksContainer = ({
   oldTextChange,
 }) => {
   tasks.sort((a, b) =>
-    a.isCheck > b.isCheck ? 1 : a.isCheck < b.isCheck ? -1 : 0,
+    a.isCheck > b.isCheck ? 1 : a.isCheck < b.isCheck ? -1 : 0
   );
   return (
     <div className="tasks-container">
