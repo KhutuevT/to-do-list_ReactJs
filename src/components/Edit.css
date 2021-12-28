@@ -1,0 +1,27 @@
+.edit-task{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    max-width: 400px;
+    min-width: 270px;
+}
+
+.edit-task textarea {
+    margin-bottom: 10px;
+    height: 70px;
+    resize: none; 
+}
+
+.edit-task p{
+    margin: 0px;
+    margin-top: 10px;
+}
+
+.main-edit-task-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

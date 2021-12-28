@@ -38,9 +38,9 @@
   }
 }
 
- .App{
+.App{
   max-height: 100%;
- }
+}
 
 .cover{
   position: fixed;

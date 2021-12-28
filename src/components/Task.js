@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Task.css';
 
 const URL = process.env.REACT_APP_LOCAL_URL;
+const deleteTasksUrl = `${URL}/deleteTask`;
+const patchUpdateTask = `${URL}/updateTask`;
 
 const Task = ({
   getAllTasks,
@@ -11,13 +14,10 @@ const Task = ({
   text,
   id,
   isCheck,
-  editModalWindowChange,
+  setOpeningTaskId,
   oldTitleChange,
   oldTextChange,
 }) => {
-  const deleteTasksUrl = `${URL}/deleteTask`;
-  const patchUpdateTask = `${URL}/updateTask`;
-
   const deleteTask = async () => {
     await axios.delete(deleteTasksUrl, {params: {id}}).then((res) => {
       getAllTasks();
@@ -25,7 +25,7 @@ const Task = ({
   };
 
   const editTask = () => {
-    editModalWindowChange(id);
+    setOpeningTaskId(id);
     oldTitleChange(title);
     oldTextChange(text);
   };
@@ -55,7 +55,9 @@ const Task = ({
       <p>{`${text}`}</p>
 
       <div className="card-buttons">
-        {!isCheck ? <button onClick={() => editTask()}>Edit</button> : null}
+        {!isCheck ? <Link to="/edit">
+          <button onClick={() => editTask()}>Edit</button>
+        </ Link> : null}
         <button onClick={() => deleteTask()}>Delete</button>
       </div>
     </div>
