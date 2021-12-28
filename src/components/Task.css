@@ -1,25 +1,48 @@
 .task-is-true {
-  border: solid 1px;
+  border-radius: 10px;
   margin: 10px;
   padding: 10px;
-  box-shadow: 5px 5px 1px #0000006e;
+  box-shadow: 0px 0px 20px 1px #1f1e22;
   max-width: 300px;
   width: 30%;
 }
+
+.task-is-false {
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(128, 128, 128, 0);
+  max-width: 300px;
+  width: 30%;
+  color: #ffffff3c;
+}
+
 .title-div {
   word-wrap: break-word;
   width: 90%;
   display: flex;
   align-items: baseline;
-  
 }
 
-.task-card{
+button {
+  border-radius: 5px;
+  color: white;
+  background-color: #1f1e22;
+  border: solid 1px;
+}
+
+.task-card {
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
   align-self: stretch;
+  background-color: #3d3c417e;
+}
+
+.task-card p {
+  font-size: 13px;
+  margin-bottom: 0px;
+  text-align: left;
 }
 
 .card-buttons {
@@ -31,15 +54,7 @@ h3 {
   margin: 0px;
   margin-left: 10px;
   width: 90%;
-}
-
-.task-is-false {
-  border: solid gray 1px;
-  margin: 10px;
-  padding: 10px;
-  background-color: gray;
-  max-width: 300px;
-  width: 30%;
+  text-align: left;
 }
 
 .task-header {
@@ -54,4 +69,13 @@ h3 {
   .task-is-false {
     width: 100%;
   }
+}
+
+.delete-img {
+  height: 16px;
+}
+
+.edit-img {
+  height: 17px;
+  margin-right: 2px;
 }

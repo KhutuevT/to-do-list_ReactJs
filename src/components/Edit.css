@@ -1,27 +1,52 @@
-.edit-task{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    max-width: 400px;
-    min-width: 270px;
+.edit-task {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  max-width: 400px;
+  min-width: 270px;
 }
 
 .edit-task textarea {
-    margin-bottom: 10px;
-    height: 70px;
-    resize: none; 
+  margin-bottom: 10px;
+  height: 70px;
+  resize: none;
 }
 
-.edit-task p{
-    margin: 0px;
-    margin-top: 10px;
+.edit-task p {
+  margin: 0px;
+  margin-top: 10px;
 }
 
-.main-edit-task-div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.main-edit-task-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-input {
+  background-color: #3d3c417e;
+  color: white;
+  box-shadow: 0px 0px 20px 1px #1f1e22;
+  border-radius: 5px;
+  border: solid 1px;
+}
+
+.text-input {
+  background-color: #3d3c417e;
+  color: white;
+  box-shadow: 0px 0px 20px 1px #1f1e22;
+  border-radius: 5px;
+  border: solid 1px;
+}
+
+.edit-task-button {
+  width: 70%;
+  margin-right: 5%;
+}
+
+.cancel-button {
+  width: 25%;
 }
