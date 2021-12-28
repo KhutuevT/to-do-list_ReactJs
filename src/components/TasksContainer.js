@@ -6,16 +6,14 @@ import './TasksContainer.css';
 const TasksContainer = ({
   tasks,
   getAllTasks,
-  editModalWindowChange,
+  setOpeningTaskId,
   oldTitleChange,
   oldTextChange,
 }) => {
   tasks.sort((a, b) => {
     if (a.isCheck === true) {
       return 1;
-    } else {
-      return -1;
-    }
+    } else return -1;
   });
   return (
     <div className="tasks-container">
@@ -27,7 +25,7 @@ const TasksContainer = ({
           id={task._id}
           isCheck={task.isCheck}
           getAllTasks={getAllTasks}
-          editModalWindowChange={editModalWindowChange}
+          setOpeningTaskId={setOpeningTaskId}
           oldTitleChange={oldTitleChange}
           oldTextChange={oldTextChange}
         />
