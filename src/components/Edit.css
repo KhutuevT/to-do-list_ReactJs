@@ -25,3 +25,28 @@
     justify-content: center;
     align-items: center;
 }
+
+.title-input{
+    background-color: #3d3c417e;
+    color: white;
+    box-shadow: 0px 0px 20px 1px #1f1e22;
+    border-radius: 5px;
+    border: solid 1px;
+}
+
+.text-input{
+    background-color: #3d3c417e;
+    color: white;
+    box-shadow: 0px 0px 20px 1px #1f1e22;
+    border-radius: 5px;
+    border: solid 1px;
+}
+
+.edit-task-button{
+    width: 70%;
+    margin-right: 5%;
+}
+
+.cancel-button{
+    width: 25%;
+}

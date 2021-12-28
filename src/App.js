@@ -3,7 +3,6 @@ import {
   Switch,
   Route,
   Redirect,
-  Link,
 } from 'react-router-dom';
 import Home from './components/Home';
 import Edit from './components/Edit';
@@ -17,10 +16,10 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <Link to="/home"> <p>Todo List</p></Link>
+        <p>Todo List</p>
       </header>
       <Switch>
-        <Route path="/edit">
+        <Route path="/edit/:id">
           <Edit
             openingTaskId={openingTaskId}
             oldTitle={oldTitle}

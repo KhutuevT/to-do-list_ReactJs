@@ -8,6 +8,15 @@
     min-width: 270px;
 }
 
+.add-task-button{
+    width: 70%;
+    margin-right: 5%;
+}
+
+.color-selection-button{
+    width: 25%;
+}
+
 .create-task textarea {
     margin-bottom: 10px;
     height: 70px;
@@ -17,6 +26,24 @@
 .create-task p{
     margin: 0px;
     margin-top: 10px;
+}
+
+button{
+    height: 20px;
+}
+
+.title-input{
+    background-color: #3d3c417e;
+    color: white;
+    box-shadow: 0px 0px 20px 1px #1f1e22;
+    border-radius: 5px;
+}
+
+.text-input{
+    background-color: #3d3c417e;
+    color: white;
+    box-shadow: 0px 0px 20px 1px #1f1e22;
+    border-radius: 5px;
 }
 
 

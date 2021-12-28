@@ -1,18 +1,15 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import CreateTask from './CreateTask';
 import TasksContainer from './TasksContainer';
+import API from "../controllers/API";
 import './Home.css';
-
-const URL = process.env.REACT_APP_LOCAL_URL;
-const getAllTasksUrl = `${URL}/allTasks`;
 
 const Home = ({setOpeningTaskId, setOldTitle, setOldText}) => {
   const [tasks, setTasks] = useState([]);
 
   const getAllTasks = React.useCallback(async () => {
-    await axios.get(getAllTasksUrl).then((res) => {
+    API.getAllTasks().then((res) => {
       setTasks(res.data.data);
     });
   }, []);

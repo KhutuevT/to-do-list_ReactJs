@@ -1,12 +1,8 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import './Task.css';
-
-const URL = process.env.REACT_APP_LOCAL_URL;
-const deleteTasksUrl = `${URL}/deleteTask`;
-const patchUpdateTask = `${URL}/updateTask`;
+import React from "react";
+import {useHistory } from "react-router-dom";
+import "./Task.css";
+import API from "../controllers/API";
 
 const Task = ({
   getAllTasks,
@@ -18,8 +14,10 @@ const Task = ({
   oldTitleChange,
   oldTextChange,
 }) => {
+  const history = useHistory();
   const deleteTask = async () => {
-    await axios.delete(deleteTasksUrl, {params: {id}}).then((res) => {
+    await API.deleteTask(id)
+    .then((res) => {
       getAllTasks();
     });
   };
@@ -28,18 +26,19 @@ const Task = ({
     setOpeningTaskId(id);
     oldTitleChange(title);
     oldTextChange(text);
+    history.push(`edit/${id}`)
   };
 
   const onCheck = async () => {
-    await axios
-        .patch(patchUpdateTask, {id, isCheck: !isCheck})
-        .then((res) => {
-          getAllTasks();
-        });
+    await API.taskIsCheckUpdate(id, !isCheck)
+      .then((res) => {
+        getAllTasks();
+      });
   };
 
   return (
-    <div className={`task-card task-is-${!isCheck}`} key={`task-${id}`}>
+    <div 
+      className={`task-card task-is-${!isCheck}`}  key={`task-${id}`}>
       <div className="task-header">
         <input
           checked={isCheck}
@@ -50,16 +49,23 @@ const Task = ({
         <div className="title-div">
           <h3>{`${title}`}</h3>
         </div>
+
+        {!isCheck ? (
+            <img
+              className="edit-img"
+              onClick={() => editTask()}
+              src="https://img.icons8.com/material-sharp/24/ffffff/edit.png"
+            />
+        ) : null}
+        <img
+          className="delete-img"
+          onClick={() => deleteTask()}
+          src="https://img.icons8.com/material-rounded/24/ffffff/filled-trash.png"
+        />
       </div>
 
       <p>{`${text}`}</p>
 
-      <div className="card-buttons">
-        {!isCheck ? <Link to="/edit">
-          <button onClick={() => editTask()}>Edit</button>
-        </ Link> : null}
-        <button onClick={() => deleteTask()}>Delete</button>
-      </div>
     </div>
   );
 };

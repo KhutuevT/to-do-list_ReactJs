@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
+import API from "../controllers/API";
 import "./CreateTask.css";
-
-const URL = process.env.REACT_APP_LOCAL_URL;
-const postCreateTaskUrl = `${URL}/createTask`;
 
 // eslint-disable-next-line react/prop-types
 const CreateTask = ({ getAllTasks }) => {
@@ -12,26 +9,20 @@ const CreateTask = ({ getAllTasks }) => {
 
   const addNewTask = async () => {
     if (title.trim().length !== 0 && text.trim().length !== 0) {
-      await axios
-        .post(postCreateTaskUrl, {
-          title,
-          text,
-          isCheck: false,
-        })
-        .then((res) => {
-          getAllTasks();
-          setTitle("");
-          setText("");
-        });
-    } else {
-      alert("Введите данные!");
-    }
-  };
+      API.addNewTask(title, text).then((res)=> {
+        getAllTasks();
+        setTitle("");
+        setText("");
+      })
+    } else alert("Форма не должна содержать пустые поля!");
+  }
 
   return (
     <div className="create-task">
       <p>Title</p>
       <input
+        className="title-input"
+        autoComplete="off"
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
@@ -39,12 +30,17 @@ const CreateTask = ({ getAllTasks }) => {
       />
       <p>Text</p>
       <textarea
+        className="text-input"
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         id="text-input"
       />
-      <button onClick={() => addNewTask()}>Add</button>
+      <div className="create-task-buttons">
+        <button className="add-task-button" onClick={() => addNewTask()}>Add</button>
+        <button className="color-selection-button">Color</button>
+      </div>
+      
     </div>
   );
 };
