@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import API from "../controllers/API";
+import API from "../../controllers/API";
 import "./Edit.css";
 
 const Edit = ({ openingTaskId, oldTitle, oldText }) => {

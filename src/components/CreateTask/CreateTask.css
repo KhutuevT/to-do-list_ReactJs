@@ -9,12 +9,7 @@
 }
 
 .add-task-button {
-  width: 70%;
-  margin-right: 5%;
-}
-
-.color-selection-button {
-  width: 25%;
+  width: 100%;
 }
 
 .create-task textarea {

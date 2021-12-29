@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
-import CreateTask from "./CreateTask";
-import TasksContainer from "./TasksContainer";
-import API from "../controllers/API";
+import CreateTask from "../CreateTask/CreateTask";
+import TasksContainer from "../TaskContainer/TasksContainer";
+import API from "../../controllers/API";
 import "./Home.css";
 
 const Home = ({ setOpeningTaskId, setOldTitle, setOldText }) => {

@@ -4,8 +4,8 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import Home from './components/Home';
-import Edit from './components/Edit';
+import Home from './components/Home/Home';
+import Edit from './components/Edit/Edit';
 import './App.css';
 
 const App = () => {

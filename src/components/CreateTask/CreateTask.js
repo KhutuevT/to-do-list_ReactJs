@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import API from "../controllers/API";
+import API from "../../controllers/API";
 import "./CreateTask.css";
 
 // eslint-disable-next-line react/prop-types
@@ -40,7 +40,6 @@ const CreateTask = ({ getAllTasks }) => {
         <button className="add-task-button" onClick={() => addNewTask()}>
           Add
         </button>
-        <button className="color-selection-button">Color</button>
       </div>
     </div>
   );

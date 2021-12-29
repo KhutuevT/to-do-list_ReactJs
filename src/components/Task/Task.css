@@ -1,19 +1,24 @@
-.task-is-true {
+.task-card {
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  background-color: #3d3c417e;
   border-radius: 10px;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 0px 0px 20px 1px #1f1e22;
   max-width: 300px;
   width: 30%;
 }
 
+.task-is-true {
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 20px 1px #1f1e22;
+}
+
 .task-is-false {
   margin: 10px;
-  border-radius: 10px;
   padding: 10px;
   background-color: rgba(128, 128, 128, 0);
-  max-width: 300px;
-  width: 30%;
   color: #ffffff3c;
 }
 
@@ -29,14 +34,6 @@ button {
   color: white;
   background-color: #1f1e22;
   border: solid 1px;
-}
-
-.task-card {
-  word-wrap: break-word;
-  display: flex;
-  flex-direction: column;
-  align-self: stretch;
-  background-color: #3d3c417e;
 }
 
 .task-card p {
